@@ -1,0 +1,26 @@
+{% extends 'HelloWorld/base.html' %}
+
+{% block head %}
+<style>
+    .bold {
+        font-weight: 900;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+
+{% include 'HelloWorld/navbar.html' %}
+
+<div class="container">
+    <h1>Hello World !</h1>
+    <ul class="collection">
+        {% for friend in friends %}
+        <li class="{% cycle 'bold' '' %} collection-item">{{ friend }}</li>
+        {% endfor %}
+    </ul>
+
+    <span>Developed by: {{ developer }}</span>
+</div>
+
+{% endblock %}
